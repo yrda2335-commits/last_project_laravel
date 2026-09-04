@@ -45,14 +45,15 @@ class DatabaseSeeder extends Seeder
         $projects = Project::factory()->count(20)->create([
             'department_id' => fn () => $departments->random()->id,
         ]);
-
-        // 20 tasks
-        Task::factory()
-            ->count(20)
-            ->create([
-                'project_id' => fn () => $projects->random()->id,
-                'assigned_user_id' => fn () => $users->random()->id,
-            ]);
+// 40 tasks - 2 tasks for each project
+foreach ($projects as $project) {
+    Task::factory()
+        ->count(2)
+        ->create([
+            'project_id' => $project->id,
+            'assigned_user_id' => $users->random()->id,
+        ]);
+}
 
         // 20 skills
         $skills = Skill::factory()->count(20)->create();
