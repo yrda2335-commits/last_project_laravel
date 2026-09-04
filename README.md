@@ -1,3 +1,55 @@
+# Enterprise Resource & Project Manager
+
+ERPM is a Laravel application for managing departments, employees, projects, tasks, skills, and training records.
+
+## Features
+
+- Laravel Breeze authentication with registration, email verification, password reset, and profile management.
+- Custom session authentication with regeneration and secure logout.
+- Eloquent one-to-one, one-to-many, many-to-one, and many-to-many relationships.
+- Factory and seeder data for the complete enterprise domain.
+- Verified-user protected Projects web CRUD with validation and flash messages.
+- Sanctum token authentication and JSON Projects CRUD under `/api/projects`.
+- Queued welcome Mailable after registration.
+
+## Setup
+
+```bash
+composer install
+copy .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+npm install
+npm run build
+php artisan serve
+```
+
+Open `http://127.0.0.1:8000` after starting the server.
+
+## API authentication
+
+Create a token with `POST /api/login`:
+
+```json
+{
+	"email": "user@example.com",
+	"password": "password",
+	"device_name": "assessment-client"
+}
+```
+
+Send the returned token as `Authorization: Bearer <token>` when calling the protected Projects endpoints.
+
+## Mail configuration
+
+For Gmail, enable two-step verification and create a Google App Password. Set `MAIL_USERNAME` and `MAIL_PASSWORD` in `.env`; never commit the real App Password. The default queue driver is database, so run `php artisan queue:work` when testing queued mail locally.
+
+## Verification
+
+```bash
+php artisan test
+php artisan route:list
+```
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
