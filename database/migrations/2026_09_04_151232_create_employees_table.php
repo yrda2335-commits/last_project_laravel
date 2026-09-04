@@ -6,20 +6,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')
+                ->unique()
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->foreignId('department_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->string('job_title');
+            $table->date('hired_at')->nullable();
+
             $table->timestamps();
+
+            $table->index('department_id');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('employees');
