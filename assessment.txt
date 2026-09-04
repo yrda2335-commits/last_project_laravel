@@ -1,0 +1,157 @@
+L<>a<>r<>a<>v<>e<>l<> <>C<>o<>m<>p<>r<>e<>h<>e<>n<>s<>i<>v<>e<> <>P<>r<>a<>c<>t<>i<>c<>a<>l<> <>A<>s<>s<>e<>s<>s<>m<>e<>n<>t
+End-to-End Enterprise Web Application Project & Implementation Task
+R<>E<>L<>E<>A<>S<>E<> <>D<>A<>T<>E
+September 4, 2026
+F<>I<>N<>A<>L<> <>D<>E<>A<>D<>L<>I<>N<>E
+September 9, 2026
+T<>A<>R<>G<>E<>T<> <>A<>U<>D<>I<>E<>N<>C<>E
+Web Development
+Students
+S<>U<>B<>M<>I<>S<>S<>I<>O<>N<> <>F<>O<>R<>M<>A<>T
+GitHub Repository &
+Demo
+⚠️ CRITICAL NOTICE: All deliverables must be fully pushed to a private or public GitHub repository
+and submitted via the course portal no later than Tuesday, September 9, 2026, at 11:59 PM. Late
+submissions will face point deductions as per course policy. 
+1. Project Overview & Objective
+This comprehensive practical assessment requires you to synthesize and apply all core Laravel concepts
+covered during our coursework. You will build a fully functional, database-driven web application named 
+"Enterprise Resource & Project Manager" (ERPM) from scratch. This project tests your mastery of routing,
+database migrations, seeders, factories, eloquent relationships, authentication mechanisms, middleware
+protection, layout templating with Blade directives, full CRUD operations (both Blade-rendered views and a
+JSON REST API), and transactional email notifications using Google App Passwords.
+2. Core Technical Requirements
+A. Database Architecture & Seeders
+Your database schema must be robust, properly normalized, and populated using Laravel seeders and
+factories:
+Migrations: Create clean migration files with proper foreign key constraints, indexes, and onDelete
+cascading rules where appropriate.
+Factories & Seeders: Use Laravel Model Factories and Faker to generate realistic dummy data. Each
+table must be seedable with at least 15–20 realistic records.
+Database Seeder: Ensure DatabaseSeeder orchestrates the seeding order correctly without constraint
+violation errors.
+• 
+• 
+• 
+Laravel Comprehensive Practical Assessment | Deadline: September 9, 2026	Page 1 of 4
+
+B. Eloquent Relationships (Mandatory Implementations)
+Your models must implement and demonstrate the following four relationship types:
+One-to-OneUser & Profile: Each user has one extended profile (bio, phone, avatar, social links).
+One-to-ManyDepartment & Employees / Project & Tasks: A department houses many employees, and
+a project contains many tasks.
+Many-to-OneTask & Assigned User: Many tasks belong to a single assigned user.
+Many-to-ManyProject & Skills / Employees & Trainings: Projects require multiple skills, and skills apply
+to multiple projects (with pivot table timestamps and extra attributes).
+C. Authentication & Middleware Security
+Secure your application using dual authentication layers:
+Custom Authentication: Implement at least one custom auth controller handling manual credential
+verification, session regeneration, and secure logout.
+Laravel Breeze Integration: Integrate Laravel Breeze for robust user registration, login, email verification,
+and password reset flows.
+Middleware Protection: Explicitly apply and customize auth and guest middlewares across your web
+routes to restrict unauthorized dashboard access and prevent logged-in users from hitting login/register
+pages.
+D. Layouts, Views & Blade Directives
+Build a clean, responsive frontend interface:
+Layout Inheritance: Create a master layout file (e.g., layouts.app) featuring dynamic header/footer
+slots, navigation bars, and flash message containers.
+Blade Directives: Utilize directives such as @extends, @section, @include, @if / @auth, @foreach,
+and component slots effectively to keep templates DRY (Don't Repeat Yourself).
+E. CRUD Operations (Blade Views & REST API)
+Implement dual-interface data management for your primary resource (e.g., Projects or Tasks):
+Web CRUD: Full Create, Read, Update, and Delete capabilities rendered via Blade views with form
+request validation and success/error flash notifications.
+API CRUD: A fully functional JSON API version protected by API tokens or Sanctum (or standard resource
+controllers returning JSON responses with proper HTTP status codes 200, 201, 404, 422).
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+Laravel Comprehensive Practical Assessment | Deadline: September 9, 2026	Page 2 of 4
+
+F. Mailer & Google App Password Integration
+Configure Laravel's mail subsystem to dispatch real emails:
+Configuration: Configure config/mail.php and .env using SMTP credentials paired with a generated 
+Google App Password.
+Mailable Class: Create a custom Mailable class (e.g., WelcomeNewUserNotification or 
+ProjectAssignedNotification ) featuring a clean Markdown or Blade HTML view.
+Trigger: Automatically dispatch this email whenever a new user registers or is assigned to a high-priority
+project.
+3. Step-by-Step Milestone Timeline (Sept 4 – Sept 9)
+4. Evaluation & Grading Rubric
+• 
+• 
+• 
+D<>A<>T<>E M<>I<>L<>E<>S<>T<>O<>N<>E<> <>F<>O<>C<>U<>SE<>X<>P<>E<>C<>T<>E<>D<> <>D<>E<>L<>I<>V<>E<>R<>A<>B<>L<>E<>S
+Day 1
+Sept 4, 2026
+Setup, Database & Migrations
+Project initialization, git repo setup, environment
+configuration, and all migration files created with correct
+foreign keys.
+Day 2
+Sept 5, 2026
+Models & Relationships
+Model creation, defining One-to-One, One-to-Many,
+Many-to-One, and Many-to-Many relationships, plus
+Factories & Seeders.
+Day 3
+Sept 6, 2026
+Auth & Middleware
+Implementing custom auth alongside Laravel Breeze
+setup, route protection using auth and guest
+middlewares.
+Day 4
+Sept 7, 2026
+Blade Layouts & Web CRUD
+Master layout creation, Blade directives, and full Web
+CRUD implementation with form validation and flash
+alerts.
+Day 5
+Sept 8, 2026
+API Controllers & Mailer
+Building JSON API resource controllers, configuring
+SMTP with Google App Password, and testing
+automated email dispatch.
+Day 6
+Sept 9, 2026
+Testing, Polish & Submission
+End-to-end testing, bug fixing, documentation
+(README.md), and final repository push before 11:59
+PM deadline.
+E<>V<>A<>L<>U<>A<>T<>I<>O<>N<> <>C<>A<>T<>E<>G<>O<>R<>YW<>E<>I<>G<>H<>TA<>S<>S<>E<>S<>S<>M<>E<>N<>T<> <>C<>R<>I<>T<>E<>R<>I<>A
+Database & Relationships 20%
+Correct implementation of migrations, seeders, factories, and
+all 4 required Eloquent relationship types.
+Authentication & Security 15%
+Successful setup of custom auth and Breeze, correct
+middleware application on web routes.
+Laravel Comprehensive Practical Assessment | Deadline: September 9, 2026	Page 3 of 4
+
+Instructor Note: If you encounter any configuration roadblocks with Google App Passwords or Eloquent
+relationship queries during your implementation, review the lecture notes or reach out during office hours prior to the
+deadline. Good luck! 
+E<>V<>A<>L<>U<>A<>T<>I<>O<>N<> <>C<>A<>T<>E<>G<>O<>R<>YW<>E<>I<>G<>H<>TA<>S<>S<>E<>S<>S<>M<>E<>N<>T<> <>C<>R<>I<>T<>E<>R<>I<>A
+Layouts & Blade Views 15%
+Clean layout inheritance, effective use of Blade directives,
+DRY templating principles.
+Full CRUD (Web & API) 25%
+Flawless execution of Create, Read, Update, Delete for both
+Blade UI and REST API endpoints with validation.
+Mailer Integration	15%
+Successful configuration using Google App Passwords and
+reliable dispatch of customized Mailable notifications.
+Code Quality &
+Documentation
+10%
+Clean code structure, meaningful naming conventions, Git
+commit history, and a comprehensive README.md.
+Laravel Comprehensive Practical Assessment | Deadline: September 9, 2026	Page 4 of 4
