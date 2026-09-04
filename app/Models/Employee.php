@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'user_id',
         'department_id',

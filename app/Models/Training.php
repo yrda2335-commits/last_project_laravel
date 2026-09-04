@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Training extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'title',
         'provider',
